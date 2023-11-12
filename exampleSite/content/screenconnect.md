@@ -51,8 +51,24 @@ ScreenConnect is a tool designed for remote access, support, and meeting solutio
 
 ## Sigma Rules
 
+```yaml
+title: Access to Suspicious ScreenConnect URL
+id: 12345678-90ab-cdef-1234-567890abcdef
+status: experimental
+description: Detects access to a ScreenConnect client installer from a suspicious URL
+references:
+    - https://dfirtnt.wordpress.com/2023/07/14/rmm-screenconnect-client-side-evidence/
+author: Vedika Bang
+date: 2023/11/11
+logsource:
+    category: web
+detection:
+    selection:
+        Url:
+            - 'https://*.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest'
+    condition: selection
+falsepositives:
+    - Legitimate access to a known ScreenConnect server
+level: high
 
-
----
-
-That's all for now. I hope you find these advanced Markdown features helpful!
+```

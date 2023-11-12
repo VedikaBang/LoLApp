@@ -27,7 +27,3 @@ Here is some text with a footnote[^1].
 ## Horizontal Rule
 
 You can insert a horizontal rule to separate sections. Here's an example:
-
----
-
-That's all for now. I hope you find these advanced Markdown features helpful!
