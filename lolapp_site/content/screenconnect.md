@@ -51,4 +51,4 @@ ScreenConnect is a tool designed for remote access, support, and meeting solutio
 
 ## Sigma Rules
 
-1. Access to Suspicious ScreenConnect URL - [Rule](https://github.com/VedikaBang/)
+1. Access to Suspicious ScreenConnect URL - [Rule](https://github.com/VedikaBang/LoLApp/blob/main/detection_rules/screenconnect/ioc1.yaml)
