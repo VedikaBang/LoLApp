@@ -24,30 +24,30 @@ ScreenConnect is a tool designed for remote access, support, and meeting solutio
 ### MITRE ATT&CK References
 
 1. [T1219 - Remote Access Software](https://attack.mitre.org/techniques/T1219): This technique involves the use of legitimate remote access software like ScreenConnect for command and control.
-    - **T1219.001 - External Remote Services:** Use of ScreenConnect for accessing the network externally.
-    - **T1219.002 - Internal Remote Services:** Use of ScreenConnect within the compromised network for lateral movement or maintaining access.
+    - [T1219.001 - External Remote Services](https://attack.mitre.org/techniques/T1219/001): Use of ScreenConnect for accessing the network externally.
+    - [T1219.002 - Internal Remote Services](https://attack.mitre.org/techniques/T1219/001): Use of ScreenConnect within the compromised network for lateral movement or maintaining access.
 
 2. **Execution:** If the attackers executed commands or scripts through ScreenConnect, it might relate to:
-    - **T1059 - Command and Scripting Interpreter:** General technique for execution of commands and scripts.
+    - [T1059 - Command and Scripting Interpreter](https://attack.mitre.org/techniques/T1059): General technique for execution of commands and scripts.
 
 3. **Persistence:** Creating new user accounts for persistent access aligns with persistence techniques.
-    - **T1136 - Create Account:** Specifically for creating new user accounts.
+    - [T1136 - Create Account](https://attack.mitre.org/techniques/T1136): Specifically for creating new user accounts.
 
 4. **Defense Evasion:** Methods used to evade detection, such as using non-PowerShell methods and leveraging legitimate tools, could relate to:
-    - **T1027 - Obfuscated Files or Information:** If obfuscation was used in payloads.
+    - [T1027 - Obfuscated Files or Information](https://attack.mitre.org/techniques/T1027): If obfuscation was used in payloads.
 
 5. **Credential Access:** If credentials were accessed or manipulated.
-    - **T1003 - OS Credential Dumping:** For accessing credentials stored in the operating system.
+    - [T1003 - OS Credential Dumping](https://attack.mitre.org/techniques/T1003): For accessing credentials stored in the operating system.
 
 6. **Discovery:** Network reconnaissance activities.
-    - **T1087 - Account Discovery:** If the attack involved discovering account information.
-    - **T1016 - System Network Configuration Discovery:** For discovering network configurations.
+    - [T1087 - Account Discovery](https://attack.mitre.org/techniques/T1087): If the attack involved discovering account information.
+    - [T1016 - System Network Configuration Discovery](https://attack.mitre.org/techniques/T1016): For discovering network configurations.
 
 7. **Lateral Movement:** Using ScreenConnect to move across the network.
-    - **T1021 - Remote Services:** Encompassing use of remote services for lateral movement.
+    - [T1021 - Remote Services](https://attack.mitre.org/techniques/T1021): Encompassing use of remote services for lateral movement.
 
 8. **Collection:** Gathering data from the target network.
-    - **T1119 - Automated Collection:** If automated methods were used to collect data.
+    - [T1119 - Automated Collection](https://attack.mitre.org/techniques/T1119): If automated methods were used to collect data.
 
 ## Footnotes
 
