@@ -6,7 +6,7 @@ tags: ["Description", "IoCs", "TTPs", "Detection Rules"]
 
 ScreenConnect is a tool designed for remote access, support, and meeting solutions. 
 
-### App Artifacts
+## App Artifacts
 
 |IoC | Observations | DFIR Relevance |
 |:---|:---:|:---|
@@ -21,7 +21,7 @@ ScreenConnect is a tool designed for remote access, support, and meeting solutio
 | `C:\Users\<user>\Documents\ConnectWiseControl\Files` | source=Application.evtx<br>EventCode=201<br>Source=ScreenConnect<br>Message="transfer" | File transfers via ScreenConnect could point to data exfiltration or unauthorized file access. |
 | powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -File C:\WINDOWS\TEMP\ScreenConnect\23.4.5.8571\f5955c63-3955-4c4a-ba98-672d4d6291eerun.ps1 | Source=Microsoft-Windows-Powershell-Operational<br>EventID 4103<br>Message=\*ScreenConnect\*.ps1\* | Execution of PowerShell scripts related to ScreenConnect could indicate automation of malicious activities or unauthorized changes. |
 
-### MITRE ATT&CK References
+## MITRE ATT&CK References
 
 1. [T1219 - Remote Access Software](https://attack.mitre.org/techniques/T1219): This technique involves the use of legitimate remote access software like ScreenConnect for command and control.
     - [T1133 - External Remote Services](https://attack.mitre.org/techniques/T1133): Use of ScreenConnect for accessing the network externally.
@@ -49,17 +49,9 @@ ScreenConnect is a tool designed for remote access, support, and meeting solutio
 8. **Collection:** Gathering data from the target network.
     - [T1119 - Automated Collection](https://attack.mitre.org/techniques/T1119): If automated methods were used to collect data.
 
-## Footnotes
+## Sigma Rules
 
-Markdown supports footnotes. Here's an example:
 
-Here is some text with a footnote[^1].
-
-[^1]: This is the footnote content.
-
-## Horizontal Rule
-
-You can insert a horizontal rule to separate sections. Here's an example:
 
 ---
 
