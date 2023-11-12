@@ -1,5 +1,5 @@
 ---
-title: Living off The Land Attacks : Application IoC Generator  
+title: "Living off The Land Attacks: Application IoC Generator"
 description: Description
 ---
 
