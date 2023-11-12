@@ -52,14 +52,14 @@ jobs:
         uses: actions/configure-pages@v1
       - name: Build with Hugo
         run: |
-          cd ./lolapp_site  && \
+          cd ./lolapp_site && \
           hugo \
             --buildDrafts --gc --verbose \
             --baseURL ${{ steps.pages.outputs.base_url }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./lolapp_site /public
+          path: ./lolapp_site/public
   # Deployment job
   deploy:
     environment:
