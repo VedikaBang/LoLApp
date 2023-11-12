@@ -23,7 +23,7 @@ ScreenConnect is a tool designed for remote access, support, and meeting solutio
 
 ### MITRE ATT&CK References
 
-1. **T1219 - Remote Access Software:** This technique involves the use of legitimate remote access software like ScreenConnect for command and control.
+1. [T1219 - Remote Access Software](https://attack.mitre.org/techniques/T1219): This technique involves the use of legitimate remote access software like ScreenConnect for command and control.
     - **T1219.001 - External Remote Services:** Use of ScreenConnect for accessing the network externally.
     - **T1219.002 - Internal Remote Services:** Use of ScreenConnect within the compromised network for lateral movement or maintaining access.
 
