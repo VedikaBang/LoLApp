@@ -1,9 +1,7 @@
 ---
 title: "Living off The Land Attacks: Application IoC Generator"
-description: Real-Time Threat Intelligence for Living off The Land Attacks at Application level
+description: Real-time Threat Intelligence for Living off The Land Attacks at the Application Level
 ---
-
-# LoLApp - Real-Time Threat Intelligence for Living off The Land Attacks at Application level
 
 This project is inspired by [LOLBAS](https://lolbas-project.github.io/) and [GTFOBins](https://gtfobins.github.io/).
 

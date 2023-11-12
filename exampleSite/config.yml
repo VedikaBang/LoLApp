@@ -1,6 +1,6 @@
 baseURL:  https://vedikabang.github.io/LoLApp/
 languageCode: en-us
-title: Index
+title: LoLApp
 theme: ../../
 pygmentsUseClasses: true
 enableInlineShortcodes: true
