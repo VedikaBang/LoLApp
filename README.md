@@ -1,9 +1,5 @@
-<h1 align=center>Hugo Index | <a href="https://github.com/VedikaBang/LoLApp/"
+<h1 align=center>LOLApp | <a href="https://github.com/VedikaBang/LoLApp/"
 ">Demo</a></h1>
-
-<p align="center">
-<kbd><img src="https://user-images.githubusercontent.com/21258296/233713549-07016736-3ca1-46a3-895f-9c08b6cd9145.png" alt="Mockup image" title="Mockup" credits="https://screely.com/"/></kbd>
-</p>
 
 ---
 
@@ -14,6 +10,7 @@
 
 ### Powered by
 
+- [Index](https://github.com/adityatelange/hugo-index) - Hugo theme inspired by GTFOBins
 - [Hugo](https://github.com/gohugoio/hugo) - The world’s fastest framework for building websites.
 - [Fuse.js](https://github.com/krisk/Fuse) - Lightweight fuzzy-search, in JavaScript
 - [Quicklink](https://github.com/GoogleChromeLabs/quicklink/) - Faster subsequent page-loads by prefetching in-viewport links during idle time
