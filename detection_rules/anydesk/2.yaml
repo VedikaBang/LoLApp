@@ -1,1 +1,14 @@
-
+title: Unusual AnyDesk DLL File Placement
+status: experimental
+description: Detects the presence of the GCAPI.DLL file, which is required for AnyDesk operation, in uncommon locations.
+author: Your Name
+logsource:
+    category: filesystem
+    product: windows
+detection:
+    selection:
+        FilePath: 
+            - 'C:\Users\*\AppData\Roaming\AnyDesk\GCAPI.DLL'
+            - 'C:\Users\*\AppData\Local\Temp\GCAPI.DLL'
+    condition: selection
+level: medium

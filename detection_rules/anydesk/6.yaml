@@ -1,0 +1,18 @@
+title: AnyDesk Application Events Detected
+status: experimental
+description: Detects application events that may indicate AnyDesk operation or misuse.
+author: Vedika Bang
+logsource:
+    category: application
+    product: windows
+detection:
+    selection:
+        EventID:
+            - 100  # AnyDesk application-specific event, e.g., start
+            - 101  # AnyDesk application-specific event, e.g., stop
+            - 200  # AnyDesk application-specific update event
+    filter:
+        - FilePath: 'C:\Program Files (x86)\AnyDesk\*'
+        - Image: 'C:\Program Files (x86)\AnyDesk\AnyDesk.exe'
+    condition: selection and filter
+level: medium

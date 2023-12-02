@@ -1,1 +1,16 @@
-
+title: AnyDesk Installation or Service Execution Detected in System Logs
+status: experimental
+description: Detects system events that may indicate AnyDesk installation or service execution.
+author: Vedika Bang
+logsource:
+    category: system
+    product: windows
+detection:
+    selection_install:
+        EventID: 7045  # A service was installed in the system
+        ServiceName: '*AnyDesk*'
+    selection_start:
+        EventID: 7036  # The service state was changed (started/stopped)
+        ServiceName: '*AnyDesk*'
+    condition: selection_install or selection_start
+level: medium

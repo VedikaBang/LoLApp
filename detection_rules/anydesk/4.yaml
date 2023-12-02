@@ -1,1 +1,17 @@
+title: AnyDesk Privileged Operation Detected in Security Logs
+status: experimental
+description: Detects security events that may indicate privileged operations by AnyDesk.
+author: Vedika Bang
+logsource:
+    category: security
+    product: windows
+detection:
+    selection:
+        EventID:
+            - 4672  # Special privileges assigned to new logon
+            - 4688  # A new process has been created
+    filter:
+        ProcessName: 'C:\Program Files (x86)\AnyDesk\AnyDesk.exe'
+    condition: selection and not filter
+level: medium
 
