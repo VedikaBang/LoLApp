@@ -10,7 +10,7 @@ ScreenConnect is a tool designed for remote access, support, and meeting solutio
 
 ## App Artifacts
 
-| IoC | Observations | DFIR Relevance |
+| IoC | Observations | DFIR Relevance &nbsp;&nbsp;&nbsp;&nbsp;|
 |:----|:-------------|:---------------|
 | Screenconnect service installed with a part of the name being randomly generated, such as “ScreenConnect Client (429d9ba6e9123fb4)” | `source=system.evtx EventCode=7045`<br>Message = "ScreenConnect Client (\*)" | Indicates potential unauthorized remote access software installation, often a sign of compromise or insider threat. |
 | A service running as SYSTEM was also recorded in a 4573 event in the Security Log indicating Sensitive Privilege Use (SeTcbPrivilege) | `source=system.evtx EventCode=4573`<br>Message = "ScreenConnect" AND Message = "SeTcbPrivilege" | Reflects elevated privileges being used, potentially for malicious purposes, requiring investigation of service behavior. |
