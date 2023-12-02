@@ -1,4 +1,4 @@
-<h1 align=center>LOLApp | <a href="https://github.com/VedikaBang/LoLApp/"
+<h1 align=center>LOLApp | <a href="https://vedikabang.github.io/LoLApp/"
 ">Demo</a></h1>
 
 ---
