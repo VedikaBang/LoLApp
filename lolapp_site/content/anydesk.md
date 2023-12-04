@@ -1,5 +1,5 @@
 ---
-title: "AnyDesk"
+title: "anydesk"
 date: 2023-11-11
 tags: ["Description", "IoCs", "TTPs", "Detection Rules"]
 ---
