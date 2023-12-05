@@ -1,18 +1,15 @@
-title: Access to Suspicious ScreenConnect URL
-id: 12345678-90ab-cdef-1234-567890abcdef
+title: AnyDesk Portable Executable Detected
 status: experimental
-description: Detects access to a ScreenConnect client installer from a suspicious URL
-references:
-    - https://dfirtnt.wordpress.com/2023/07/14/rmm-screenconnect-client-side-evidence/
+description: Detects the AnyDesk portable executable in the user's AppData directory.
 author: Vedika Bang
-date: 2023/11/11
 logsource:
-    category: web
+    category: filesystem
+    product: windows
 detection:
     selection:
-        Url:
-            - 'https://*.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest'
+        FilePath: 
+            - 'C:\Users\*\AppData\Roaming\AnyDesk\'
+            - 'C:\Users\*\Downloads\'
+            - 'C:\Users\*\Desktop\'
     condition: selection
-falsepositives:
-    - Legitimate access to a known ScreenConnect server
-level: high
+level: medium

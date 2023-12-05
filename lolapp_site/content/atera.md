@@ -1,35 +1,36 @@
 ---
-title: "atera"
+title: "Atera"
 date: 2023-11-11
 tags: ["Description", "IoCs", "TTPs", "Detection Rules"]
 ---
 
-## AnyDesk
+## Atera
 
-AnyDesk is a tool designed for remote access, enabling users to connect to computers remotely.
+Atera is an all-in-one remote monitoring and management (RMM) tool primarily used by IT professionals and Managed Service Providers (MSPs). It offers features like remote access, IT automation, reporting, and patch management.
 
 ## App Artifacts
-
-| IoC | Observations | DFIR Relevance &nbsp;&nbsp;&nbsp;&nbsp;|
+| IoC | Observations | DFIR Relevance |
 |:----|:-------------|:---------------|
-| `C:\ProgramData\AnyDesk\` | Direct installation location | Indicates a potential unauthorized persistent installation of AnyDesk, often a sign of compromise or insider threat. |
-| `C:\Users\<username>\AppData\Roaming\AnyDesk\` | Portable executable location | Suggests the presence of AnyDesk on the user's profile, which could be used for remote access by attackers. |
-| `C:\Users\<username>\Downloads\`<br>`C:\Users\<username>\Desktop\` | Likely scammer installation locations | Presence of AnyDesk in these directories may indicate non-standard installation methods, often associated with social engineering or scamming activities. |
-| `GCAPI.DLL` in:<br>`C:\Users\<username>\AppData\Roaming\AnyDesk\`<br>`C:\Users\<username>\AppData\Local\Temp\` | DLL required for AnyDesk | The presence of `GCAPI.DLL` in the executable directory or temp folders suggests AnyDesk activity and potential unauthorized access. |
-| `Connection_trace.txt` in:<br>`C:\ProgramData\AnyDesk\` | Log file for incoming requests | Provides timestamps and IDs for incoming connections, aiding in identifying unauthorized access attempts. |
-| `user.conf` in:<br>`C:\ProgramData\AnyDesk\` | AnyDesk configuration file | Altered configurations may indicate attacker tampering, such as enabling file transfers for data exfiltration. |
-| `ad.trace` in:<br>`C:\ProgramData\AnyDesk\` | Verbose log file for AnyDesk | Contains detailed AnyDesk session information, including potential attacker IP addresses. |
-| `ad_scv.trace` in:<br>`C:\ProgramData\AnyDesk\` | Log file for the AnyDesk service | Generated after a forced reboot, could indicate unauthorized changes or attempts at maintaining persistence. |
+| `C:\Program Files\Atera Networks\AteraAgent\` | Default installation directory | Presence of Atera Agent indicates remote management capability. Could be exploited for unauthorized access or persistence. |
+| `AteraAgent.exe` in `C:\Program Files\Atera Networks\AteraAgent\` | Main executable file | Execution patterns of `AteraAgent.exe` can indicate abnormal or unauthorized remote management activities. |
+| `%AppData%\Atera Networks\AteraAgent\` | Configuration and log files | Configurations and logs stored here can reveal operational patterns and potentially unauthorized or malicious modifications. |
+| `AteraAgentService.log` in `C:\Program Files\Atera Networks\AteraAgent\` | Log file for the Atera Agent Service | Logs service activities, errors, and network connections, essential for investigating remote operations and diagnostics. |
+| Registry Key: `HKLM\SOFTWARE\Atera Networks\` | Registry entries for configurations | Modifications in this registry path may suggest configuration changes for persistence or unauthorized access. |
+| Network traffic to `*.atera.com` | Atera server communications | Unusual traffic patterns to Atera domains could indicate misuse for command and control or data exfiltration activities. |
+| File Transfer Directories: | | |
+| `C:\Users\<username>\Downloads\Atera\` | Download location for Atera files | Files downloaded via Atera might be located here; could indicate data exfiltration or tool transfer. |
+| `C:\Users\<username>\Documents\Atera\` | Default directory for file transfers | Unusual files or modifications in this directory might suggest unauthorized data movement. |
+| Amcache and Shellbags | | |
+| `Amcache.hve` entries related to Atera | Records execution of Atera-related executables | Can provide historical execution details even after file deletion, indicating Atera usage or abuse. |
+
 
 ## MITRE ATT&CK References
 
-1. **[CVE-2021-44426](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44426)**: Security flaw in AnyDesk that could be exploited in an attack.
-2. **[T1553.002](https://attack.mitre.org/versions/v13/techniques/T1553/002/)**: Subvert Trust Controls: Code Signing - Attackers might leverage legitimate AnyDesk software for malicious purposes.
-3. **[T1570](https://attack.mitre.org/versions/v13/techniques/T1570/)**: Lateral Tool Transfer - AnyDesk could be used to move tools or payloads across a compromised network.
-4. **[T1219](https://attack.mitre.org/versions/v13/techniques/T1219/)**: Remote Access Software - AnyDesk is a legitimate remote access tool that could be abused by attackers for command and control.
+1. **[T1133](https://attack.mitre.org/versions/v13/techniques/T1133/)**: External Remote Services - Atera, as a remote service, can be misused for persistent access.
+2. **[T1199](https://attack.mitre.org/versions/v13/techniques/T1199/)**: Trusted Relationship - Attackers may exploit MSPs’ trusted relationships via Atera.
+3. **[T1219](https://attack.mitre.org/versions/v13/techniques/T1219/)**: Remote Access Software - While legitimate, Atera can be used by attackers for remote operations.
+4. **[T1569.002](https://attack.mitre.org/versions/v13/techniques/T1569/002/)**: System Services: Service Execution - Unauthorized service execution of Atera Agent for persistence.
 
 ## Sigma Rules
 
-(Include any relevant Sigma rules for detecting suspicious AnyDesk activity, formatted as Markdown links)
-
-[def]: (Include the link to your Sigma rules repository)
+- Sigma rules to be formulated for detecting anomalies in Atera usage, such as unusual activity patterns, unexpected installation on critical systems, or abnormal network communications.

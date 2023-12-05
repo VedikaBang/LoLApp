@@ -1,1 +1,16 @@
 
+title: AnyDesk Portable Executable Detected
+status: experimental
+description: Detects the AnyDesk portable executable in the user's AppData directory.
+author: Vedika Bang
+logsource:
+    category: filesystem
+    product: windows
+detection:
+    selection:
+        FilePath: 
+            - 'C:\Users\*\AppData\Roaming\AnyDesk\'
+            - 'C:\Users\*\Downloads\'
+            - 'C:\Users\*\Desktop\'
+    condition: selection
+level: medium
