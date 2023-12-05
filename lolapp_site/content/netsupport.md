@@ -4,6 +4,9 @@ date: 2023-11-11
 tags: ["Description", "IoCs", "TTPs", "Detection Rules"]
 ---
 
+## netsupport
+
+NetSupport is a software tool used for remote control, classroom management, and IT support.
 
 ## App Artifacts
 
