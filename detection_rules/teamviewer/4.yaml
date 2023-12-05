@@ -1,1 +1,14 @@
+title: Detect TeamViewer General Log File Access
+description: Detects access to the TeamViewer general log file.
+status: experimental
+logsource:
+    category: file
+    product: windows
+detection:
+    selection:
+        FilePath:
+            - 'C:\Program Files\TeamViewer\TeamViewer15_Logfile.log'
+    condition: selection
+falsepositives:
+    - Legitimate access to the log file
 

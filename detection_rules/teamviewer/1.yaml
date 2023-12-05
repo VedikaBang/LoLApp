@@ -1,18 +1,15 @@
-title: Access to Suspicious ScreenConnect URL
-id: 12345678-90ab-cdef-1234-567890abcdef
+title: Detect TeamViewer Installation Directory Modification
+description: Detects modifications to the TeamViewer installation directory.
 status: experimental
-description: Detects access to a ScreenConnect client installer from a suspicious URL
-references:
-    - https://dfirtnt.wordpress.com/2023/07/14/rmm-screenconnect-client-side-evidence/
-author: Vedika Bang
-date: 2023/11/11
 logsource:
-    category: web
+    category: file
+    product: windows
 detection:
     selection:
-        Url:
-            - 'https://*.screenconnect.com/Bin/ScreenConnect.ClientSetup.exe?e=Access&y=Guest'
+        FileDirectory:
+            - 'C:\Program Files\TeamViewer\*'
+            - 'C:\Program Files (x86)\TeamViewer\*'
     condition: selection
 falsepositives:
-    - Legitimate access to a known ScreenConnect server
-level: high
+    - Legitimate software updates or installations
+level: medium

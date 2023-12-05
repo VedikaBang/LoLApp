@@ -1,1 +1,14 @@
+title: Detect Access to TeamViewer Connection Log
+description: Detects access to the TeamViewer connection log file.
+status: experimental
+logsource:
+    category: file
+    product: windows
+detection:
+    selection:
+        FilePath:
+            - 'C:\Program Files\TeamViewer\Connections_incoming.txt'
+    condition: selection
+falsepositives:
+    - Legitimate access to the connection log
 
