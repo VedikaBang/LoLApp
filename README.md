@@ -5,8 +5,3 @@
 
 ## Docs
 CS 6727 Cyber Practicum Project
-### Variables
-
-
-### Powered by
-
